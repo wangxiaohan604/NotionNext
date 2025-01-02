@@ -20,7 +20,7 @@ const CONFIG = {
   // 英雄区(首页顶部大卡)
   HEO_HERO_TITLE_1: '分享实用工具资源',
   HEO_HERO_TITLE_2: '与副业赚钱方法',
-  HEO_HERO_TITLE_3: 'TANGLY1024.COM',
+  HEO_HERO_TITLE_3: 'SHINE WITH US',
   HEO_HERO_TITLE_4: '拾光分享',
   HEO_HERO_TITLE_5: '最新实用资源分享',
   HEO_HERO_TITLE_LINK: 'https://tangly1024.com',
