@@ -9,7 +9,7 @@
    主题 : process. 环境 . 下一个主题 || 'simple' , // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
    开关开关 : process. 环境 . NEXT_PUBLIC_THEME_SWITCH || 假的 , // 是否显示切换主题按钮
       朗 : process. 环境 . 下公共部门 || 'zh-CN' , //例如"ZU-C","N-US",见/LIP/LU。
-     此后 : process. 环境 . 自从 || 2021 , //例如,如果留下这一空白,将使用当年。
+     此后 : process. 环境 . 自从 || 2025 , //例如,如果留下这一空白,将使用当年。
     外表 : process. 环境 . NEXT_PUBLIC_APPEARANCE || 'light' , // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
     出现的时间 : process. 环境 . NEXT_PUBLIC_APPEARANCE_DARK_TIME || [  18 , 6  ] , // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
 
@@ -26,7 +26,7 @@
 
           作者 : process. 环境 . 新作者 || '拾光分享站' , // 您的昵称 例如 tangly1024
          生物物理学 : process. 环境 . Next_p_bo || '探索实用资源与课程的博客，分享副业赚钱技巧，让生活更有品质 ✨' , // 作者简介
-        连接 : process. 环境 . 新公共链接 || 'https://tangly1024.com' , // 网站地址
+        连接 : process. 环境 . 新公共链接 || 'https://qshare.cc' , // 网站地址
       关键词 : process. 环境 . 关键词 || '副业赚钱, 资源分享, 免费软件, 影视资源, 电子书籍, 实用工具, 课程分享,白嫖,羊毛福利,AI工具,免费资源下载' , // 网站关键词 英文逗号隔开
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
