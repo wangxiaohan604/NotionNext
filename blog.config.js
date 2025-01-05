@@ -1,63 +1,33 @@
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/article/how-to-config-notion-next#c4768010ae7d44609b744e79e2f9959a
  const BLOG = {
-  // 网站信息
-  TITLE: 'QShare',
-  AUTHOR: 'QShare',
-  BIO: '分享免费资源、工具和教程',
-  KEYWORDS: ['QShare', '资源分享', '工具', '教程'],
-  URL: 'https://qshare.cc',  // 修改为你的网站URL
-  
-  // Notion配置
-  NOTION_PAGE_ID: '02ab3b8678904a69e9e415905ef32a5',
-  
-  // 系统配置
-  NEXT_PUBLIC_PSEUDO_STATIC: true,
-  NEXT_REVALIDATE_SECOND: 5,
-  THEME: 'simple',
-  NEXT_PUBLIC_THEME_SWITCH: true,
-  LANG: 'zh-CN',
-  
-  // 分类映射配置
-  CATEGORY_MAPPING: {
-    "软件分享": "software",
-    "教程": "tutorials",
-    "工具": "tools",
-    "科技": "tech",
-    "资源分享": "resources",
-    "书籍": "books",
-    "知识合集": "knowledge",
-    "娱乐": "entertainment",
-    "AI": "ai",
-    "趣站": "sites",
-    "赚钱": "money",
-    "网赚项目": "online-money",
-    "福利": "welfare",
-    "页面": "pages",
-    "主要页面": "main",
-    "归档": "archive"
-  }
-}
+  // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
+  NOTION_PAGE_ID:
+    process.env.NOTION_PAGE_ID ||
+    '02ab3b8678004aa69e9e415905ef32a5,en:7c1d570661754c8fbc568e00a01fd70e',
+  PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false, // 伪静态路径，开启后所有文章URL都以 .html 结尾。
+  NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 5, // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
+  THEME: process.env.NEXT_PUBLIC_THEME || 'simple', // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
+  THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || false, // 是否显示切换主题按钮
+  LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
+  SINCE: process.env.NEXT_PUBLIC_SINCE || 2021, // e.g if leave this empty, current year will be used.
+  APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light', // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
+  APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6], // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
 
-module.exports = BLOG
-     此后 : process. 环境 . 自从 || 2025 , //例如,如果留下这一空白,将使用当年。
-    外表 : process. 环境 . NEXT_PUBLIC_APPEARANCE || 'light' , // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
-    出现的时间 : process. 环境 . NEXT_PUBLIC_APPEARANCE_DARK_TIME || [  18 , 6  ] , // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
-
-    计数器 : 真实的 , // 标签是否按照文章数量倒序排列，文章多的标签排在前。
-    IS_TAG_COLOR_DISTINGUISHED :
-    程序。 环境 . NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUISHED === 'true' || 真实的 , // 对于名称相同的tag是否区分tag的颜色
+  TAG_SORT_BY_COUNT: true, // 标签是否按照文章数量倒序排列，文章多的标签排在前。
+  IS_TAG_COLOR_DISTINGUISHED:
+    process.env.NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUISHED === 'true' || true, // 对于名称相同的tag是否区分tag的颜色
 
   // 3.14.1版本后，欢迎语在此配置，英文逗号隔开 ,  即可支持多个欢迎语打字效果。
-    问候语 :
-    程序。 环境 .NEXT_PUBLIC_GREETING_WORDS ||
-              "嗨,欢声笑语点播站!" ,
+  GREETING_WORDS:
+    process.env.NEXT_PUBLIC_GREETING_WORDS ||
+    '🎉欢迎来到拾光分享站，这是一个专注于分享美好时光与实用资源的小天地🎉',
 
-           定制菜单 : process. 环境 . NEXT_PUBLIC_CUSTOM_MENU || 假的 , // 支持Menu 类型，从3.12.0版本起，各主题将逐步支持灵活的二级菜单配置，替代了原来的Page类型，此配置是试验功能、默认关闭。
+  CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || false, // 支持Menu 类型，从3.12.0版本起，各主题将逐步支持灵活的二级菜单配置，替代了原来的Page类型，此配置是试验功能、默认关闭。
 
-          作者 : process. 环境 . 新作者 || '拾光分享站' , // 您的昵称 例如 tangly1024
-         生物物理学 : process. 环境 . Next_p_bo || '探索实用资源与课程的博客，分享副业赚钱技巧，让生活更有品质 ✨' , // 作者简介
-        连接 : process. 环境 . 新公共链接 || 'https://qshare.cc' , // 网站地址
-      关键词 : process. 环境 . 关键词 || '副业赚钱, 资源分享, 免费软件, 影视资源, 电子书籍, 实用工具, 课程分享,白嫖,羊毛福利,AI工具,免费资源下载' , // 网站关键词 英文逗号隔开
+  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '拾光分享', // 您的昵称 例如 tangly1024
+  BIO: process.env.NEXT_PUBLIC_BIO || '分享美好时光与实用资源', // 作者简介
+  LINK: process.env.NEXT_PUBLIC_LINK || 'https://qshare.cc', // 网站地址
+  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '资源分享, 免费软件, 影视资源, 电子书籍, 实用工具, 课程分享,教程,羊毛福利,AI工具,网赚项目,知识分享', // 网站关键词 英文逗号隔开
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
      联系方式 : process. 环境 . NEXT_PUBLIC_CONTACT_EMAIL || "Wefwzx621@Gmail.com" , // 邮箱地址 例如mail@tangly1024.com
