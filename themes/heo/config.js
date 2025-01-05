@@ -3,7 +3,7 @@ const config = {
 };
 
 
-   HEO_HOME_BANNER_ENABLE : 真实的 ,
+   HEO_HOME_BANNER_ENABLE : true ,
 
    时间 : '2025-01-01' , // 建站日期，用于计算网站运行的第几天
 
