@@ -1,6 +1,7 @@
- 康斯特  配置 = {
-   HEO_HOME_POST_TWO_COLS : 真实的 , // 首页博客两列显示，若为false则只显示一列
-   超负荷式封面 : 真实的 , // 页面加载的遮罩动画
+const config = {
+    HEO_HOME_POST_TWO_COLS: true, // 修正
+};
+
 
    HEO_HOME_BANNER_ENABLE : 真实的 ,
 
