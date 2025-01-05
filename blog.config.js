@@ -63,14 +63,16 @@
   // 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css
   FONT_URL: [
     // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css',
-     谷歌网站/css网站?家庭=苦味和展示=交换' ,
-     //字体...................................................................家庭=诺托+无/无/无/无/无/无/无/无/无/无/ ,
-    //字体...................................................................家庭=诺托+塞里夫+SC:WTIT@300&un;显示=交换'
-   ] ,
+      FONT_URL: [
+    // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css',
+    'https://fonts.googleapis.com/css?family=Bitter&display=swap',
+    'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap',
+    'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300&display=swap'
+  ],
   // 无衬线字体 例如'"LXGW WenKai"'
-   费恩_桑斯 : [
+  FONT_SANS: [
     // '"LXGW WenKai"',
-     '"PingFang SC"' ,
+    '"PingFang SC"',
     '-apple-system',
     'BlinkMacSystemFont',
     '"Hiragino Sans GB"',
