@@ -1,14 +1,44 @@
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/article/how-to-config-notion-next#c4768010ae7d44609b744e79e2f9959a
- 康斯特  博客 = {
-  //重要页!!!HTPS的复制模板://www.non.苏/坦格赫/02AB3B8678004A69E415905E32A5
-   思想_页_d :
-    程序。 环境 . 思想_页_d ||
-     '02ab3b8678004aa69e9e415905ef32a5,en:7c1d570661754c8fbc568e00a01fd70e' ,
-   伪静态的 : process. 环境 . NEXT_PUBLIC_PSEUDO_STATIC || 假的 , // 伪静态路径，开启后所有文章URL都以 .html 结尾。
-   NEXT_REVALIDATE_SECOND : process. 环境 . NEXT_PUBLIC_REVALIDATE_SECOND || 5 , // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
-   主题 : process. 环境 . 下一个主题 || 'simple' , // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
-   开关开关 : process. 环境 . NEXT_PUBLIC_THEME_SWITCH || 假的 , // 是否显示切换主题按钮
-      朗 : process. 环境 . 下公共部门 || 'zh-CN' , //例如"ZU-C","N-US",见/LIP/LU。
+ const BLOG = {
+  // 网站信息
+  TITLE: 'QShare',
+  AUTHOR: 'QShare',
+  BIO: '分享免费资源、工具和教程',
+  KEYWORDS: ['QShare', '资源分享', '工具', '教程'],
+  URL: 'https://qshare.cc',  // 修改为你的网站URL
+  
+  // Notion配置
+  NOTION_PAGE_ID: '02ab3b8678904a69e9e415905ef32a5',
+  
+  // 系统配置
+  NEXT_PUBLIC_PSEUDO_STATIC: true,
+  NEXT_REVALIDATE_SECOND: 5,
+  THEME: 'simple',
+  NEXT_PUBLIC_THEME_SWITCH: true,
+  LANG: 'zh-CN',
+  
+  // 分类映射配置
+  CATEGORY_MAPPING: {
+    "软件分享": "software",
+    "教程": "tutorials",
+    "工具": "tools",
+    "科技": "tech",
+    "资源分享": "resources",
+    "书籍": "books",
+    "知识合集": "knowledge",
+    "娱乐": "entertainment",
+    "AI": "ai",
+    "趣站": "sites",
+    "赚钱": "money",
+    "网赚项目": "online-money",
+    "福利": "welfare",
+    "页面": "pages",
+    "主要页面": "main",
+    "归档": "archive"
+  }
+}
+
+module.exports = BLOG
      此后 : process. 环境 . 自从 || 2025 , //例如,如果留下这一空白,将使用当年。
     外表 : process. 环境 . NEXT_PUBLIC_APPEARANCE || 'light' , // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
     出现的时间 : process. 环境 . NEXT_PUBLIC_APPEARANCE_DARK_TIME || [  18 , 6  ] , // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
