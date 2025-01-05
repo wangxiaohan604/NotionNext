@@ -1,69 +1,69 @@
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/article/how-to-config-notion-next#c4768010ae7d44609b744e79e2f9959a
- const BLOG = {
-  // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
-  NOTION_PAGE_ID:
-    process.env.NOTION_PAGE_ID ||
-    '02ab3b8678004aa69e9e415905ef32a5,en:7c1d570661754c8fbc568e00a01fd70e',
-  PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false, // 伪静态路径，开启后所有文章URL都以 .html 结尾。
-  NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 5, // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
-  THEME: process.env.NEXT_PUBLIC_THEME || 'simple', // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
-  THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || false, // 是否显示切换主题按钮
-  LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
-  SINCE: process.env.NEXT_PUBLIC_SINCE || 2021, // e.g if leave this empty, current year will be used.
-  APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light', // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
-  APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6], // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
+  康斯特  博客 = {
+  //重要页!!!HTPS的复制模板://www.non.苏/坦格赫/02AB3B8678004A69E415905E32A5
+    思想_页_d :
+    程序。 环境 . 思想_页_d ||
+     '02ab3b8678004aa69e9e415905ef32a5,en:7c1d570661754c8fbc568e00a01fd70e' ,
+    伪静态的 : process. 环境 . NEXT_PUBLIC_PSEUDO_STATIC || 假的 , // 伪静态路径，开启后所有文章URL都以 .html 结尾。
+    NEXT_REVALIDATE_SECOND : process. 环境 . NEXT_PUBLIC_REVALIDATE_SECOND || 5 , // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
+    主题 : process. 环境 . 下一个主题 || 'simple' , // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
+    开关开关 : process. 环境 . NEXT_PUBLIC_THEME_SWITCH || 假的 ,// 是否显示切换主题按钮env.NEXT_PUBLIC_THEME_SWITCH || false, // 是否显示切换主题按钮
+  LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
+   由于 :处理过程, 如自2021年起 , //如来留下空白鸟,更具体使用年份。自:处理过程。如自2021年起,//如留下此空,则使用当年。
+   外表 : process. 环境 . NEXT_PUBLIC_APPEARANCE || 'light' , // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式外表 : process. 环境 . NEXT_PUBLIC_APPEARANCE || 'light' , // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
+    出现的时间 : process. 环境 . NEXT_PUBLIC_APPEARANCE_DARK_TIME || [  18 , 6  ] , // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
 
-  TAG_SORT_BY_COUNT: true, // 标签是否按照文章数量倒序排列，文章多的标签排在前。
-  IS_TAG_COLOR_DISTINGUISHED:
-    process.env.NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUISHED === 'true' || true, // 对于名称相同的tag是否区分tag的颜色
+    计数器 : 真实的 , // 标签是否按照文章数量倒序排列，文章多的标签排在前。
+   IS_TAG_COLOR_DISTINGUISHED :IS_TAG_COLOR_DISTINGUISHED :
+    程序。 环境 . NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUISHED === 'true' || 真实的 , // 对于名称相同的tag是否区分tag的颜色env.NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUISHED === 'true' || true, // 对于名称相同的tag是否区分tag的颜色
 
-  // 3.14.1版本后，欢迎语在此配置，英文逗号隔开 ,  即可支持多个欢迎语打字效果。
-  GREETING_WORDS:
-    process.env.NEXT_PUBLIC_GREETING_WORDS ||
-    '🎉欢迎来到拾光分享站，这是一个专注于分享美好时光与实用资源的小天地🎉',
+  // 3.14.1版本后，欢迎语在此配置，英文逗号隔开 ,  即可支持多个欢迎语打字效果。// 3.14.1版本后，欢迎语在此配置，英文逗号隔开 ,  即可支持多个欢迎语打字效果。
+  问候:GREETING_WORDS:
+    程序。 环境 . NEXT_PUBLIC_GREETING_WORDS ||env. NEXT_PUBLIC_GREETING_WORDS ||
+     '新一代' 新一代''新一代' ,
 
-  CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || false, // 支持Menu 类型，从3.12.0版本起，各主题将逐步支持灵活的二级菜单配置，替代了原来的Page类型，此配置是试验功能、默认关闭。
+  CUSTOM_MENU: process.
 
-  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '拾光分享', // 您的昵称 例如 tangly1024
-  BIO: process.env.NEXT_PUBLIC_BIO || '分享美好时光与实用资源', // 作者简介
-  LINK: process.env.NEXT_PUBLIC_LINK || 'https://qshare.cc', // 网站地址
-  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '资源分享, 免费软件, 影视资源, 电子书籍, 实用工具, 课程分享,教程,羊毛福利,AI工具,网赚项目,知识分享', // 网站关键词 英文逗号隔开
+  作者:过程。AUTHOR: process.
+   生物物理学 : process.
+   连接 : process.
+   关键词 : process.
 
-  // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
-     联系方式 : process. 环境 . NEXT_PUBLIC_CONTACT_EMAIL || "Wefwzx621@Gmail.com" , // 邮箱地址 例如mail@tangly1024.com
-    联系人_微博 : process. 环境 . NEXT_PUBLIC_CONTACT_WEIBO || '' , // 你的微博个人主页
-           接触_推特 : process. 环境 . NEXT_PUBLIC_CONTACT_TWITTER || '' , // 你的twitter个人主页
-          接触 : process. 环境 . NEXT_PUBLIC_CONTACT_GITHUB || '' , // 你的github个人主页 例如 https://github.com/tangly1024
-         联系电报 : process. 环境 . NEXT_PUBLIC_CONTACT_TELEGRAM || '' , // 你的telegram 地址 例如 https://t.me/tangly_1024
-       接触素 : process. 环境 . NEXT_PUBLIC_CONTACT_LINKEDIN || '' , // 你的linkedIn 首页
-       联系人 : process. 环境 . NEXT_PUBLIC_CONTACT_INSTAGRAM || '' , // 您的instagram地址
-      接触_比利比利 : process. 环境 . NEXT_PUBLIC_CONTACT_BILIBILI || '' , // B站主页
-     触手 : process. 环境 . NEXT_PUBLIC_CONTACT_YOUTUBE || '' , // Youtube主页
-    接触_小红书 : process. 环境 . NEXT_PUBLIC_CONTACT_XIAOHONGSHU || '' , // 小红书主页
-      CONTACT_ZHISHIXINGQIU : process. 环境 . NEXT_PUBLIC_CONTACT_ZHISHIXINGQIU || '' , // 知识星球
-      CONTACT_WEHCHAT_PUBLIC : process. 环境 . NEXT_PUBLIC_CONTACT_WEHCHAT_PUBLIC || '' , // 微信公众号 格式：https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=【xxxxxx】==#wechat_redirect
+  // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''// 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
+      联系方式 : process. 环境 . NEXT_PUBLIC_CONTACT_EMAIL || "Wefwzx621@Gmail.com" , // 邮箱地址 例如mail@tangly1024.com联系方式 : process. 环境 . NEXT_PUBLIC_CONTACT_EMAIL || "Wefwzx621@Gmail.com" , // 邮箱地址 例如mail@tangly1024.com
+    联系人_微博 : process. 环境 . NEXT_PUBLIC_CONTACT_WEIBO || '' , // 你的微博个人主页联系人_微博 : process. 环境 . NEXT_PUBLIC_CONTACT_WEIBO || '' , // 你的微博个人主页
+           接触_推特 : process. 环境 . NEXT_PUBLIC_CONTACT_TWITTER || '' , // 你的twitter个人主页接触_推特 : process. 环境 . NEXT_PUBLIC_CONTACT_TWITTER || '' , // 你的twitter个人主页
+          接触 : process.
+          联系电报 : process.
+        接触素 : process.接触素 : process. 
+       联系人 : process. 
+      接触_比利比利 : process. 
+     触手 : process.触手 : process. 
+    接触_小红书 : process. 
+      CONTACT_ZHISHIXINGQIU : process.CONTACT_ZHISHIXINGQIU : process. 
+      CONTACT_WEHCHAT_PUBLIC : process. 
 
-     想法_主持人 : process. 环境 . NEXT_PUBLIC_NOTION_HOST || 'https://www.notion.so' , // Notion域名，您可以选择用自己的域名进行反向代理，如果不懂得什么是反向代理，请勿修改此项
+     想法_主持人 : process. 环境 . NEXT_PUBLIC_NOTION_HOST || 'https://www.notion.so' , // Notion域名，您可以选择用自己的域名进行反向代理，如果不懂得什么是反向代理，请勿修改此项环境 . NEXT_PUBLIC_NOTION_HOST || 'https://www.notion.so' , // Notion域名，您可以选择用自己的域名进行反向代理，如果不懂得什么是反向代理，请勿修改此项
 
-    布洛格_法维肯 : process. 环境 . 新的 || '/favicon.ico' , // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png
+    布洛格_法维肯 : process. 环境 . 新的 || '/favicon.ico' , // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png环境 . 新的 || '/favicon.ico' , // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png
 
-  IMAGE_COMPRESS_WIDTH: process.env.NEXT_PUBLIC_IMAGE_COMPRESS_WIDTH || 800, // 图片压缩宽度默认值，作用于博客封面和文章内容 越小加载图片越快
-  IMAGE_ZOOM_IN_WIDTH: process.env.NEXT_PUBLIC_IMAGE_ZOOM_IN_WIDTH || 1200, // 文章图片点击放大后的画质宽度，不代表在网页中的实际展示宽度
-  RANDOM_IMAGE_URL: process.env.NEXT_PUBLIC_RANDOM_IMAGE_URL || '', // 随机图片API,如果未配置下面的关键字，主页封面，头像，文章封面图都会被替换为随机图片
+  IMAGE_COMPRESS_WIDTH: process.env.NEXT_PUBLIC_IMAGE_COMPRESS_WIDTH || 800, // 图片压缩宽度默认值，作用于博客封面和文章内容 越小加载图片越快env.NEXT_PUBLIC_IMAGE_COMPRESS_WIDTH || 800, // 图片压缩宽度默认值，作用于博客封面和文章内容 越小加载图片越快
+  IMAGE_ZOOM_IN_WIDTH: process.env.NEXT_PUBLIC_IMAGE_ZOOM_IN_WIDTH || 1200, // 文章图片点击放大后的画质宽度，不代表在网页中的实际展示宽度env.NEXT_PUBLIC_IMAGE_ZOOM_IN_WIDTH || 1200, // 文章图片点击放大后的画质宽度，不代表在网页中的实际展示宽度
+  RANDOM_IMAGE_URL: process.env.NEXT_PUBLIC_RANDOM_IMAGE_URL || '', 
   RANDOM_IMAGE_REPLACE_TEXT:
-    process.env.NEXT_PUBLIC_RANDOM_IMAGE_NOT_REPLACE_TEXT ||
-    'images.unsplash.com', // 触发替换图片的 url 关键字(多个支持用英文逗号分开)，只有图片地址中包含此关键字才会替换为上方随机图片url
-  // eg: images.unsplash.com(notion图床的所有图片都会替换),如果你在 notion 里已经添加了一个随机图片 url，恰巧那个服务跑路或者挂掉，想一键切换所有配图可以将该 url 配置在这里
-  // 默认下会将你上传到 notion的主页封面图和头像也给替换，建议将主页封面图和头像放在其他图床，在 notion 里配置 link 即可。
+    process. 环境 . NEXT_PUBLIC_RANDOM_IMAGE_NOT_REPLACE_TEXT ||
+    'images.unsplash.com', // 触发替换图片的 url 关键字(多个支持用英文逗号分开)，只有图片地址中包含此关键字才会替换为上方随机图片url'images.unsplash.com' , // 触发替换图片的 url 关键字(多个支持用英文逗号分开)，只有图片地址中包含此关键字才会替换为上方随机图片url
+  // eg: images.unsplash.com(notion图床的所有图片都会替换),如果你在 notion 里已经添加了一个随机图片 url，恰巧那个服务跑路或者挂掉，想一键切换所有配图可以将该 url 配置在这里// eg: images.unsplash.com(notion图床的所有图片都会替换),如果你在 notion 里已经添加了一个随机图片 url，恰巧那个服务跑路或者挂掉，想一键切换所有配图可以将该 url 配置在这里
+  // 默认下会将你上传到 notion的主页封面图和头像也给替换，建议将主页封面图和头像放在其他图床，在 notion 里配置 link 即可。// 默认下会将你上传到 notion的主页封面图和头像也给替换，建议将主页封面图和头像放在其他图床，在 notion 里配置 link 即可。
 
-  // START ************网站字体*****************
-  // ['font-serif','font-sans'] 两种可选，分别是衬线和无衬线: 参考 https://www.jianshu.com/p/55e410bd2115
-  // 后面空格隔开的font-light的字体粗细，留空是默认粗细；参考 https://www.tailwindcss.cn/docs/font-weight
-  FONT_STYLE: process.env.NEXT_PUBLIC_FONT_STYLE || 'font-sans font-light',
-  // 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css
+  // START ************网站字体*****************// START ************网站字体*****************
+  // ['font-serif','font-sans'] 两种可选，分别是衬线和无衬线: 参考 https://www.jianshu.com/p/55e410bd2115// ['font-serif','font-sans'] 两种可选，分别是衬线和无衬线: 参考 https://www.jianshu.com/p/55e410bd2115
+  // 后面空格隔开的font-light的字体粗细，留空是默认粗细；参考 https://www.tailwindcss.cn/docs/font-weight// 后面空格隔开的font-light的字体粗细，留空是默认粗细；参考 https://www.tailwindcss.cn/docs/font-weight
+  FONT_STYLE: process.env.NEXT_PUBLIC_FONT_STYLE || 'font-sans font-light',env.NEXT_PUBLIC_FONT_STYLE || 'font-sans font-light',
+  // 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css// 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css
   FONT_URL: [
     // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css',
-      FONT_URL: [
+     FONT_URL: [
     // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css',
     'https://fonts.googleapis.com/css?family=Bitter&display=swap',
     'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap',
@@ -440,7 +440,7 @@
   ANALYTICS_VERCEL: process.env.NEXT_PUBLIC_ANALYTICS_VERCEL || false, // vercel自带的统计 https://vercel.com/docs/concepts/analytics/quickstart https://github.com/tangly1024/NotionNext/issues/897
   ANALYTICS_BUSUANZI_ENABLE:
     process.env.NEXT_PUBLIC_ANALYTICS_BUSUANZI_ENABLE || true, // 展示网站阅读量、访问数 see http://busuanzi.ibruce.info/
-  ANALYTICS_BAIDU_ID: process.env.NEXT_PUBLIC_ANALYTICS_BAIDU_ID || 'codeva-eRdQdd35t1', // e.g 只需要填写百度统计的id，[baidu_id] -> https://hm.baidu.com/hm.js?[baidu_id]
+  ANALYTICS_BAIDU_ID: process.env.NEXT_PUBLIC_ANALYTICS_BAIDU_ID || '', // e.g 只需要填写百度统计的id，[baidu_id] -> https://hm.baidu.com/hm.js?[baidu_id]
   ANALYTICS_CNZZ_ID: process.env.NEXT_PUBLIC_ANALYTICS_CNZZ_ID || '', // 只需要填写站长统计的id, [cnzz_id] -> https://s9.cnzz.com/z_stat.php?id=[cnzz_id]&web_id=[cnzz_id]
   ANALYTICS_GOOGLE_ID: process.env.NEXT_PUBLIC_ANALYTICS_GOOGLE_ID || '', // 谷歌Analytics的id e.g: G-XXXXXXXXXX
 
