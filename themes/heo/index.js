@@ -59,6 +59,7 @@ const LayoutBase = props => {
   const headerSlot = (
     <header>
       {/* 顶部导航 */}
+    <meta name="baidu-site-verification" content="codeva-eRdQdd35t1" />
       <Header {...props} />
 
       {/* 通知横幅 */}
