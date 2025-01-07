@@ -21,7 +21,7 @@ const Header = props => {
   const [textWhite, setTextWhite] = useState(false)
   const [navBgWhite, setBgWhite] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
-<meta name="baidu-site-verification" content="codeva-eRdQdd35t1" />
+
   const router = useRouter()
   const slideOverRef = useRef()
 
