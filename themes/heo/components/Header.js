@@ -16,7 +16,7 @@ import SlideOver from './SlideOver'
  * @param {*} param0
  * @returns
  */
-<meta name="baidu-site-verification" content="codeva-eRdQdd35t1" />
+
 const Header = props => {
 
   const [fixedNav, setFixedNav] = useState(false)
