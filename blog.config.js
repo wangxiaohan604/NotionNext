@@ -1,46 +1,47 @@
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/article/how-to-config-notion-next#c4768010ae7d44609b744e79e2f9959a
-const BLOG = {
-  // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
-  NOTION_PAGE_ID:
-    process.env.NOTION_PAGE_ID ||
-    '02ab3b8678004aa69e9e415905ef32a5,en:7c1d570661754c8fbc568e00a01fd70e',
-  PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false, // 伪静态路径，开启后所有文章URL都以 .html 结尾。
-  NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 5, // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
-  THEME: process.env.NEXT_PUBLIC_THEME || 'simple', // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
-  THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || false, // 是否显示切换主题按钮
-  LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
-  SINCE: process.env.NEXT_PUBLIC_SINCE || 2021, // e.g if leave this empty, current year will be used.
-  APPEARANCE: process.env.NEXT_PUBLIC_APPEARANCE || 'light', // ['light', 'dark', 'auto'], // light 日间模式 ， dark夜间模式， auto根据时间和主题自动夜间模式
-  APPEARANCE_DARK_TIME: process.env.NEXT_PUBLIC_APPEARANCE_DARK_TIME || [18, 6], // 夜间模式起至时间，false时关闭根据时间自动切换夜间模式
+常量博客= {
+  // 重要的 page_id！来自 https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5 的重复模板
+  NOTION_PAGE_ID：
+    过程。环境。NOTION_PAGE_ID ||
+    '02ab3b8678004aa69e9e415905ef32a5，en：7c1d570661754c8fbc568e00a01fd70e'，
+  PSEUDO_STATIC：进程。
+  NEXT_REVALIDATE_SECOND：进程。
+  主题：过程。
+  THEME_SWITCH：进程。环境。NEXT_PUBLIC_THEME_SWITCH ||false , // 是否显示切换主题按钮
+  郎：进程。环境。NEXT_PUBLIC_LANG || 
+  自：过程。环境。NEXT_PUBLIC_SINCE || 2021 , // 例如，如果前面字段留空，则将使用当前年份。2021 , // 例如，如果前面字段留空，则将使用当前年份。
+  外观：过程。环境。NEXT_PUBLIC_APPEARANCE || 'light' , // ['light', 'dark', 'auto'], // 亮日间模式，暗夜模式， auto'light' , // ['light', 'dark', 'auto'] , // light 日间模式 ， dark 夜间模式， auto 根据时间和主题自动夜间模式
+  APPEARANCE_DARK_TIME：进程。
 
-  TAG_SORT_BY_COUNT: true, // 标签是否按照文章数量倒序排列，文章多的标签排在前。
-  IS_TAG_COLOR_DISTINGUISHED:
-    process.env.NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUISHED === 'true' || true, // 对于名称相同的tag是否区分tag的颜色
+  TAG_SORT_BY_COUNT：TAG_SORT_BY_COUNT:
+  IS_TAG_COLOR_DISTINGUIISHED：
+    过程。环境。NEXT_PUBLIC_IS_TAG_COLOR_DISTINGUIISHED === 'true' || true , // 对于相同名称的标签是否区分标签的颜色'true' || true , // 对于相同名称的标签是否区分标签的颜色
 
-  // 3.14.1版本后，欢迎语在此配置，英文逗号隔开 ,  即可支持多个欢迎语打字效果。
-  GREETING_WORDS:
-    process.env.NEXT_PUBLIC_GREETING_WORDS ||
-    '专注于挖掘那些有趣的软件，小工具、学习课程、赚钱技巧,欢迎来到我的博客🎉',
+  // 3.14.1版本后，欢迎此配置，中文评论隔开，可支持多个评论评论效果。// 3.14.1版本后，欢迎此配置，中文评论隔开，可支持多个评论评论效果。欢迎使用语言效果。
+  问候语：
+    过程。环境。
+    '专注于挖掘那些有趣的软件、小工具、学习课程、赚钱技巧，欢迎来到我的博客🎉'，
 
-  CUSTOM_MENU: process.env.NEXT_PUBLIC_CUSTOM_MENU || false, // 支持Menu 类型，从3.12.0版本起，各主题将逐步支持灵活的二级菜单配置，替代了原来的Page类型，此配置是试验功能、默认关闭。
+  CUSTOM_MENU：流程。
 
-  AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '拾光分享', // 您的昵称 例如 tangly1024
-  BIO: process.env.NEXT_PUBLIC_BIO || '每天3分钟，轻松get一个新技能', // 作者简介
-  LINK: process.env.NEXT_PUBLIC_LINK || 'https://qshare.cc', // 网站地址
-  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '学习课程资源, 应用工具分享,影视剧推荐,免费办公软件推荐,AI智能写作工具,AI绘画课程推荐,经典商业书籍推荐,免费电子书资源', // 网站关键词 英文逗号隔开
+  作者：过程。
+  生物：过程。
+  链接：过程。
+  关键词：过程。环境。NEXT_PUBLIC_KEYWORD || '免费教程,资源分享,实用工具,网盘资源,免费副业教程,手机赚钱方法,零基础教程,实用软件下载,在线工具,赚钱技巧,教程网站,资源网,工具箱' , // 网站关键词词 中文 逗号 隔开
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
-  CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'wyfwzx621@gmail.com', // 邮箱地址 例如mail@tangly1024.com
-  CONTACT_WEIBO: process.env.NEXT_PUBLIC_CONTACT_WEIBO || '', // 你的微博个人主页
-  CONTACT_TWITTER: process.env.NEXT_PUBLIC_CONTACT_TWITTER || '', // 你的twitter个人主页
-  CONTACT_GITHUB: process.env.NEXT_PUBLIC_CONTACT_GITHUB || '', // 你的github个人主页 例如 https://github.com/tangly1024
-  CONTACT_TELEGRAM: process.env.NEXT_PUBLIC_CONTACT_TELEGRAM || '', // 你的telegram 地址 例如 https://t.me/tangly_1024
-  CONTACT_LINKEDIN: process.env.NEXT_PUBLIC_CONTACT_LINKEDIN || '', // 你的linkedIn 首页
-  CONTACT_INSTAGRAM: process.env.NEXT_PUBLIC_CONTACT_INSTAGRAM || '', // 您的instagram地址
-  CONTACT_BILIBILI: process.env.NEXT_PUBLIC_CONTACT_BILIBILI || '', // B站主页
-  CONTACT_YOUTUBE: process.env.NEXT_PUBLIC_CONTACT_YOUTUBE || '', // Youtube主页
-  CONTACT_XIAOHONGSHU: process.env.NEXT_PUBLIC_CONTACT_XIAOHONGSHU || '', // 小红书主页
-  CONTACT_ZHISHIXINGQIU: process.env.NEXT_PUBLIC_CONTACT_ZHISHIXINGQIU || '', // 知识星球
+  CONTACT_EMAIL：处理。环境。NEXT_PUBLIC_CONTACT_EMAIL || 'wyfwzx621@gmail.com' , // 邮箱地址 例如mail@tangly1024.com
+  CONTACT_WEIBO：处理。环境。NEXT_PUBLIC_CONTACT_WEIBO || 'https://weibo.com/u/1663984472
+', // 你的微博个人主页
+  CONTACT_TWITTER：进程。
+  CONTACT_GITHUB：进程。
+  CONTACT_TELEGRAM：进程。
+  CONTACT_LINKEDIN：进程。
+  CONTACT_INSTAGRAM：过程。env. NEXT_PUBLIC_CONTACT_INSTAGRAM || '' ,// 您的 Instagram 地址
+  CONTACT_BILIBILI：进程。env. NEXT_PUBLIC_CONTACT_BILIBILI || '' , // B站主页
+  CONTACT_YOUTUBE：进程。env. NEXT_PUBLIC_CONTACT_YOUTUBE || '' , // YouTube主页
+  CONTACT_小红书：处理。env. NEXT_PUBLIC_CONTACT_小红书|| '' ,// 小红书主页
+  CONTACT_ZHISHEXINGQIU：进程。env.NEXT_PUBLIC_CONTACT_ZHISHIXINGQIU || '', // 知识星球
   CONTACT_WEHCHAT_PUBLIC: process.env.NEXT_PUBLIC_CONTACT_WEHCHAT_PUBLIC || '', // 微信公众号 格式：https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=【xxxxxx】==#wechat_redirect
 
   NOTION_HOST: process.env.NEXT_PUBLIC_NOTION_HOST || 'https://www.notion.so', // Notion域名，您可以选择用自己的域名进行反向代理，如果不懂得什么是反向代理，请勿修改此项
@@ -58,12 +59,12 @@ const BLOG = {
 
   // START ************网站字体*****************
   // ['font-serif','font-sans'] 两种可选，分别是衬线和无衬线: 参考 https://www.jianshu.com/p/55e410bd2115
-  // 后面空格隔开的font-light的字体粗细，留空是默认粗细；参考 https://www.tailwindcss.cn/docs/font-weight
-  FONT_STYLE: process.env.NEXT_PUBLIC_FONT_STYLE || 'font-sans font-light',
+  // 后面空格隔开的font-light的字体粗细，留空是默认粗细；参考https://www.tailwindcss.cn/docs/font-weight
+  FONT_STYLE: process.
   // 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css
-  FONT_URL: [
+  FONT_URL: 
     // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css',
-    'https://fonts.googleapis.com/css?family=Bitter&display=swap',
+    'https://fonts.googleapis.com/css?family=Bitter&display=swap' ,
     'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap',
     'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300&display=swap'
   ],
