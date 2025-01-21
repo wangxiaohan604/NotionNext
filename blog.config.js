@@ -27,7 +27,7 @@ const BLOG = {
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '拾光分享', // 您的昵称 例如 tangly1024
   BIO: process.env.NEXT_PUBLIC_BIO || '每天3分钟,轻松get一个新技能', // 作者简介
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://qshare.cc', // 网站地址
-  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '学习课程资源, 应用工具分享,影视剧推荐,免费办公软件推荐,AI智能写作工具,AI绘画课程推荐,经典商业书籍推荐,免费电子书资源', // 网站关键词 英文逗号隔开
+  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '免费教程,资源分享,实用工具,网盘资源,免费副业教程,手机赚钱方法,零基础教程,实用软件下载,在线工具,赚钱技巧,教程网站,资源网,工具箱', // 网站关键词 英文逗号隔开
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
   CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'wyfwzx621@gmail.com', // 邮箱地址 例如mail@tangly1024.com
