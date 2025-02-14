@@ -8,8 +8,8 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
-    { title: '🎉欢迎来到我的博客', url: 'https://qshare.cc' },
-    { title: '🔥 最新教程：教你用抖音美女号日赚100+！', url: 'https://qshare.cc/resources/douyin-beauty-account-monetization-guide' }
+    { title: '🎉 DeepSeek满血版入口', url: 'https://www.wenxiaobai.com/chat/200006' },
+    { title: '🔥 5g号卡店铺，各种19元29元的百g流量卡', url: 'https://172.lot-ml.com/ProductEn/index/14502bb2905ec2df' }
   ],
 
   // 英雄区左右侧组件颠倒位置
@@ -120,7 +120,7 @@ const CONFIG = {
   HEO_SOCIAL_CARD_TITLE_1: '交流频道',
   HEO_SOCIAL_CARD_TITLE_2: '加入我们的社群讨论分享',
   HEO_SOCIAL_CARD_TITLE_3: '点击加入社群',
-  HEO_SOCIAL_CARD_URL: 'https://qshare.cc/about',
+  HEO_SOCIAL_CARD_URL: '点击链接加入群聊【资源宝库共享】：http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4Gi12lXydG_8_LqT1ktD7DJKj8XKyGpT&authKey=xQUcyRPWf5LAlw0AL8eNxO%2BrCxuWqlXzulWzfLNaYHQR%2B4tAvTbgjxwXuIb3ucuP&noverify=0&group_code=639042828',
 
   // 底部统计面板文案
   HEO_POST_COUNT_TITLE: '文章数:',
