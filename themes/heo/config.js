@@ -8,8 +8,8 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
-    { title: '🎉 DeepSeek满血版入口', url: 'https://www.wenxiaobai.com/chat/200006' },
-    { title: '🔥 5g号卡店铺，各种19元29元的百g流量卡', url: 'https://172.lot-ml.com/ProductEn/index/14502bb2905ec2df' }
+    { title: '🎉 5元起寄快递！一单也是折扣价', url: 'https://wxaurl.cn/Rsar25yCpSa ' },
+    { title: '🔥 19元29元的百g流量卡，免费包邮到家', url: 'https://172.lot-ml.com/ProductEn/index/14502bb2905ec2df' }
   ],
 
   // 英雄区左右侧组件颠倒位置
