@@ -19,7 +19,7 @@ const BLOG = {
   LINK: process.env.NEXT_PUBLIC_LINK || 'https://qshare.cc', // 网站地址
   KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '副业项目, 免费资源, 学习资料, 软件工具, 效率工具, 电商运营, 电子书下载, 网盘资源, 省钱攻略, AI 工具, AI 教程, ChatGPT 应用, AI 绘画技巧, 深度学习, 人工智能, AI 编程, AI 创业', // 网站关键词 英文逗号隔开
   BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || '/favicon.ico', // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png
-  BEI_AN: process.env.NEXT_PUBLIC_BEI_AN || '', // 备案号 闽ICP备XXXXXX
+  BEI_AN: process.env.NEXT_PUBLIC_BEI_AN || '', // 备案号 闽ICP备XXXXX
   BEI_AN_LINK: process.env.NEXT_PUBLIC_BEI_AN_LINK || 'https://beian.miit.gov.cn/', // 备案查询链接，如果用了萌备等备案请在这里填写
 
   // RSS订阅
