@@ -24,7 +24,7 @@ const CONFIG = {
   HEO_HERO_TITLE_3: 'Qshare 分享站',
   HEO_HERO_TITLE_4: '新版上线',
   HEO_HERO_TITLE_5: 'AI与 副业 的完美结合',
-  HEO_HERO_TITLE_LINK: 'https://qshare.cc',
+  HEO_HERO_TITLE_LINK: 'https://www.qshare.cc/tutorials/how-to-build-solo-company-with-ai-tools-2025',
   // 英雄区遮罩文字
   HEO_HERO_COVER_TITLE: '随便逛逛',
 
